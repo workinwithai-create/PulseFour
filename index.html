@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PulseFour — live pulse desk</title>
+  <meta name="description" content="Four live-instrument bars that give a static loop a pulse so the track can finish." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<main>
+  <p class="eyebrow">WorkinWithAI · live chairs</p>
+  <h1>PulseFour</h1>
+  <p class="lead">Four-bar live pulse desk. Static loops stall because nothing drives them. Session players write four live bars of pulse — upright on the quarters, piano accents, kit on the pulse — so the pocket has drive and the track can finish. Live piano, upright, nylon, kit, trumpet, violin. Not a lock. Not a tag. Not a lift.</p>
+  <p class="status" id="status">Tap to start audio…</p>
+  <div class="controls">
+    <label>BPM <input type="number" id="bpm" min="60" max="180" value="98" /></label>
+    <label>Key <select id="key"><option>A minor</option><option>C major</option><option>E major</option><option>D minor</option><option>G major</option></select></label>
+    <label>Bars <input type="number" id="bars" min="4" max="16" value="12" /></label>
+  </div>
+  <p class="eyebrow">Groove</p>
+  <div class="row" id="grooves"></div>
+  <p class="eyebrow">Pulse</p>
+  <div class="row" id="recipes"></div>
+  <p class="eyebrow">Form · verse 1–8 · pulse 9–12</p>
+  <div class="bars" id="barsDisplay"></div>
+  <h2>Punch list</h2>
+  <pre id="punch"></pre>
+  <p class="ios-note">On iOS the silent switch mutes Web Audio.</p>
+</main>
+<div class="dock">
+  <button id="playA">A · Verse loop</button>
+  <button id="playB">B · Full form</button>
+  <button id="play8">8 · Pulse only</button>
+  <button class="ghost" id="stop">Stop</button>
+  <button class="ghost" id="exportWav">Export WAV</button>
+  <button class="ghost" id="exportMid">Export MIDI</button>
+  <button class="ghost" id="copy">Copy punch</button>
+</div>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
